@@ -5,7 +5,7 @@ import Footer from "../components/Footer"
 
 function Root() {
   return (
-    <div className="">
+    <div className="w-[96vw] mx-auto p-3 border">
         {/* navbar here */}
        <NavBar />
         {/* Outlet here */}

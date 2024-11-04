@@ -35,23 +35,74 @@
     },
     {
         "product_id": "P003",
-        "product_title": "Samsung Galaxy S23 Ultra",
-        "product_image": "https://example.com/galaxys23ultra.jpg",
-        "category": "Phones",
-        "price": 1199,
-        "description": "High-end smartphone with a powerful camera and long battery life.",
+        "product_title": "HP Spectre x360",
+        "product_image": "https://example.com/hpspectrex360.jpg",
+        "category": "Laptops",
+        "price": 1599,
+        "description": "A powerful 2-in-1 laptop with a stunning display and robust performance.",
         "specification": [
-            "6.8-inch QHD+ AMOLED display",
-            "Snapdragon 8 Gen 2 processor",
-            "108MP quad-camera setup",
-            "5,000mAh battery",
-            "Up to 1TB storage"
+            "13.5-inch 3K2K OLED display",
+            "Intel Core i7 processor",
+            "16GB RAM",
+            "512GB SSD storage",
+            "Intel Iris Xe graphics"
         ],
         "availability": true,
-        "rating": 4.7
+        "rating": 4.5
     },
     {
         "product_id": "P004",
+        "product_title": "Lenovo ThinkPad X1 Carbon Gen 10",
+        "product_image": "https://example.com/thinkpadx1carbon.jpg",
+        "category": "Laptops",
+        "price": 1799,
+        "description": "Durable and powerful, this laptop is designed for business professionals.",
+        "specification": [
+            "14-inch 4K UHD display",
+            "Intel Core i7 processor",
+            "16GB RAM",
+            "1TB SSD storage",
+            "Intel Iris Xe graphics"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "product_id": "P005",
+        "product_title": "Acer Swift 3",
+        "product_image": "https://example.com/acerswift3.jpg",
+        "category": "Laptops",
+        "price": 899,
+        "description": "Compact and budget-friendly, ideal for students and casual users.",
+        "specification": [
+            "14-inch Full HD display",
+            "AMD Ryzen 7 processor",
+            "8GB RAM",
+            "512GB SSD storage",
+            "AMD Radeon graphics"
+        ],
+        "availability": true,
+        "rating": 4.3
+    },
+    {
+        "product_id": "P006",
+        "product_title": "Microsoft Surface Laptop 5",
+        "product_image": "https://example.com/surfacelaptop5.jpg",
+        "category": "Laptops",
+        "price": 1599,
+        "description": "Versatile and stylish laptop with a high-resolution touch display.",
+        "specification": [
+            "15-inch PixelSense touch display",
+            "Intel Core i5 processor",
+            "16GB RAM",
+            "256GB SSD storage",
+            "Intel Iris Xe graphics"
+        ],
+        "availability": true,
+        "rating": 4.4
+    },
+    {
+        "product_id": "P007",
         "product_title": "Apple iPhone 15 Pro Max",
         "product_image": "https://example.com/iphone15promax.jpg",
         "category": "Iphone",
@@ -68,72 +119,21 @@
         "rating": 4.8
     },
     {
-        "product_id": "P005",
-        "product_title": "Apple Watch Series 9",
-        "product_image": "https://example.com/applewatchseries9.jpg",
-        "category": "Smart Watches",
-        "price": 499,
-        "description": "Stay connected and track your health with the latest Apple Watch.",
-        "specification": [
-            "Always-on Retina display",
-            "Heart rate monitor",
-            "Sleep tracking",
-            "Water resistant up to 50 meters",
-            "Blood oxygen app"
-        ],
-        "availability": true,
-        "rating": 4.6
-    },
-    {
-        "product_id": "P006",
-        "product_title": "Samsung Galaxy Watch 6",
-        "product_image": "https://example.com/galaxywatch6.jpg",
-        "category": "Smart Watches",
-        "price": 399,
-        "description": "A versatile smartwatch with advanced health tracking and connectivity.",
-        "specification": [
-            "1.5-inch Super AMOLED display",
-            "Heart rate and ECG monitoring",
-            "Advanced sleep tracking",
-            "Water resistant up to 50 meters",
-            "GPS and Bluetooth connectivity"
-        ],
-        "availability": true,
-        "rating": 4.5
-    },
-    {
-        "product_id": "P007",
-        "product_title": "Apple MacBook Air M2",
-        "product_image": "https://example.com/macbookairm2.jpg",
-        "category": "MacBook",
-        "price": 999,
-        "description": "The MacBook Air with M2 chip, delivering both portability and power.",
-        "specification": [
-            "13.6-inch Liquid Retina display",
-            "Apple M2 chip",
-            "Up to 24GB unified memory",
-            "Up to 2TB SSD storage",
-            "All-day battery life"
-        ],
-        "availability": true,
-        "rating": 4.8
-    },
-    {
         "product_id": "P008",
-        "product_title": "Sony WH-1000XM5 Wireless Headphones",
-        "product_image": "https://example.com/sonywh1000xm5.jpg",
-        "category": "Accessories",
-        "price": 399,
-        "description": "Industry-leading noise-cancelling headphones for immersive sound experience.",
+        "product_title": "Samsung Galaxy S23 Ultra",
+        "product_image": "https://example.com/galaxys23ultra.jpg",
+        "category": "Phones",
+        "price": 1199,
+        "description": "High-end smartphone with a powerful camera and long battery life.",
         "specification": [
-            "Active noise cancellation",
-            "Up to 30 hours battery life",
-            "Quick charge (3 hours playback with 3 minutes of charge)",
-            "Touch controls",
-            "Foldable and portable design"
+            "6.8-inch QHD+ AMOLED display",
+            "Snapdragon 8 Gen 2 processor",
+            "108MP quad-camera setup",
+            "5,000mAh battery",
+            "Up to 1TB storage"
         ],
         "availability": true,
-        "rating": 4.6
+        "rating": 4.7
     },
     {
         "product_id": "P009",
@@ -151,5 +151,23 @@
         ],
         "availability": true,
         "rating": 4.7
+    },
+    {
+        "product_id": "P010",
+        "product_title": "Sony WH-1000XM5 Wireless Headphones",
+        "product_image": "https://example.com/sonywh1000xm5.jpg",
+        "category": "Accessories",
+        "price": 349,
+        "description": "Industry-leading noise-cancelling headphones for immersive sound experience.",
+        "specification": [
+            "Active noise cancellation",
+            "Up to 30 hours battery life",
+            "Quick charge (3 hours playback with 3 minutes of charge)",
+            "Touch controls",
+            "Foldable and portable design"
+        ],
+        "availability": true,
+        "rating": 4.6
     }
+    
 ]

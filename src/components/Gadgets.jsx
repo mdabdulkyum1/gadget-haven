@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import Cart from './Cart';
 
 function Gadgets() {
+  const [gadgets, setGadgets] = useState([]);
+
   const [categories, setCategories] = useState([]);
   const [isActive, setIsActive] = useState("all");
  
@@ -10,11 +13,25 @@ function Gadgets() {
       .then((data) => setCategories(data));
   }, []);
 
+  useEffect(()=>{
+     fetch('products.json')
+        .then(res => res.json())
+        .then(data => setGadgets(data))
+  } ,[])
+
+ 
+
+const handelCategoryData = () => {
+   
+
+}
+
+
   return (
     <>
       <div className="-mt-24 mb-12">
         <h1 className="text-center text-4xl font-bold mb-6">
-          Explore Cutting-Edge Gadgets
+          Explore Cutting-Edge Gadgets : {gadgets.length}
         </h1>
         <div className=" lg:flex justify-center gap-6">
           <div className="shadow-md p-6">
@@ -35,7 +52,10 @@ function Gadgets() {
                       ? "bg-purple text-white"
                       : "bg-base-300"
                   }  py-2 rounded-3xl px-5 text-left`}
-                  onClick={() => setIsActive(c.category_id)}
+                  onClick={() => {
+                    setIsActive(c.category_id)
+                    handelCategoryData(c.category_name)
+                  }}
                 >
                   {c.category_name}
                 </button>
@@ -46,54 +66,12 @@ function Gadgets() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-4 lg:ml-0">
 
                     
-            <div className="card card-compact bg-base-100 w-96 shadow-xl">
-              <figure>
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
-            <div className="card card-compact bg-base-100 w-96 shadow-xl">
-              <figure>
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
-            <div className="card card-compact bg-base-100 w-96 shadow-xl">
-              <figure>
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
-            
+            {
+              gadgets.map(gadget => <Cart key={gadget.product_id} cart={gadget}></Cart>)
+            }
 
           </div>
+
         </div>
       </div>
     </>
