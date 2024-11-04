@@ -1,13 +1,13 @@
-import Banner from "../components/Banner"
-
+import Banner from "../components/Banner";
+import Gadgets from "../components/Gadgets";
 
 function Home() {
   return (
     <>
-        <Banner></Banner>
-    
+      <Banner></Banner>
+      <Gadgets></Gadgets>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
