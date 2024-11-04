@@ -2,6 +2,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
 import Home from './../pages/Home';
+import Statistics from './../pages/Statistics';
 
 export const routes = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ export const routes = createBrowserRouter([
         },
         {
             path:"statistics",
-            element: <h1>statistics</h1>
+            element: <Statistics></Statistics>
         },
         {
             path:"dashboard",
