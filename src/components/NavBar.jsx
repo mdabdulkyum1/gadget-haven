@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 function NavBar() {
   const link = (
@@ -15,9 +15,11 @@ function NavBar() {
     </>
   );
 
+  const changePath = useLocation();
+
   return (
     <>
-      <nav className="navbar  bg-purple text-white max-w-7xl mx-auto">
+      <nav className= {`${changePath.pathname === "/" ? "absolute left-1/2 -translate-x-2/4 bg-purple text-white" : '' } navbar max-w-7xl mx-auto`}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
