@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function Cart({ cart }) {
-  const { product_title, category, product_image, price } = cart;
+  const { product_id, product_title, category, product_image, price } = cart;
   return (
     <div className="shadow-md p-6 space-y-6">
       <div className="">
@@ -12,7 +12,7 @@ function Cart({ cart }) {
         <h1 className="text-xl font-bold">{product_title}</h1>
         <p>{category}</p>
         <p className="">Price: ${price}</p>
-        <Link to="/" >
+        <Link to={`cart/${product_id}`} >
           <button className="btn">View Details</button>
         </Link>
       </div>

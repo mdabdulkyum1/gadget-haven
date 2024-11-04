@@ -4,6 +4,7 @@ import Root from "../layouts/Root";
 import Home from './../pages/Home';
 import Statistics from './../pages/Statistics';
 import Dashboard from './../pages/Dashboard';
+import ProductDetails from "../components/ProductDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ export const routes = createBrowserRouter([
             path:"dashboard",
             element: <Dashboard></Dashboard>
         },
+        {
+          path:"cart/:id",
+          element: <ProductDetails></ProductDetails>,
+          loader: ()=> fetch('/products.json')
+        }
     ]
   },
   
