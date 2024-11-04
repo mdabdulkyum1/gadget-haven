@@ -1,0 +1,26 @@
+[
+    {
+        "category_id": "C001",
+        "category_name": "Laptops"
+    },
+    {
+        "category_id": "C002",
+        "category_name": "Phones"
+    },
+    {
+        "category_id": "C003",
+        "category_name": "Accessories"
+    },
+    {
+        "category_id": "C004",
+        "category_name": "Smart Watches"
+    },
+    {
+        "category_id": "C005",
+        "category_name": "MacBook"
+    },
+    {
+        "category_id": "C006",
+        "category_name": "Iphone"
+    }
+]
