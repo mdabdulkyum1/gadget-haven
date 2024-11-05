@@ -1,31 +1,44 @@
 import { useEffect, useState } from "react";
-import Cart from './Cart';
+import Cart from "./Cart";
 
 function Gadgets() {
   const [gadgets, setGadgets] = useState([]);
+  const [categoryBy, setCategoryBy] = useState([]);
+  const [categoryName, setCategoryName] = useState("all");
 
   const [categories, setCategories] = useState([]);
   const [isActive, setIsActive] = useState("all");
- 
+
   useEffect(() => {
     fetch("categories.json")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
 
-  useEffect(()=>{
-     fetch('products.json')
-        .then(res => res.json())
-        .then(data => setGadgets(data))
-  } ,[])
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((data) => setGadgets(data));
+  }, []);
 
- 
+  const handelC = (value) => {
+    setCategoryName(value);
+  };
 
-const handelCategoryData = () => {
-   
+  useEffect(() => {
+    const current = [...gadgets];
 
-}
+    if (categoryName === "all") {
+      setCategoryBy(gadgets);
+    } else {
+      const currents = current.filter((cu) => {
+        return cu.category === categoryName;
+      });
 
+      setCategoryBy(currents);
+    }
+
+  }, [gadgets, categoryName]);
 
   return (
     <>
@@ -37,9 +50,12 @@ const handelCategoryData = () => {
           <div className="shadow-md p-6 lg:w-[15%]">
             <div className="flex flex-col gap-3">
               <button
-              onClick={()=> setIsActive('all')}
+                onClick={() => {
+                  setIsActive("all");
+                  handelC("all");
+                }}
                 className={`${
-                  isActive === 'all' ? "bg-purple text-white" : "bg-base-300"
+                  isActive === "all" ? "bg-purple text-white" : "bg-base-300"
                 } py-2 rounded-3xl px-5 text-left`}
               >
                 All Product
@@ -53,8 +69,8 @@ const handelCategoryData = () => {
                       : "bg-base-300"
                   }  py-2 rounded-3xl px-5 text-left`}
                   onClick={() => {
-                    setIsActive(c.category_id)
-                    handelCategoryData(c.category_name)
+                    setIsActive(c.category_id);
+                    handelC(c.category_name);
                   }}
                 >
                   {c.category_name}
@@ -64,14 +80,17 @@ const handelCategoryData = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-4 lg:ml-0 w-5/6">
-
-                    
-            {
-              gadgets.map(gadget => <Cart key={gadget.product_id} cart={gadget}></Cart>)
-            }
-
+            {categoryBy.length ? (
+              categoryBy.map((gadget) => (
+                <Cart key={gadget.product_id} cart={gadget}></Cart>
+              ))
+            ) : (
+              <div>
+                {" "}
+                <h1 className="font-bold text-4xl">No Data Found</h1>{" "}
+              </div>
+            )}
           </div>
-
         </div>
       </div>
     </>

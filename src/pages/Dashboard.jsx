@@ -20,12 +20,12 @@ function Dashboard() {
       <div className="">
         <Tabs>
           <TabList className="flex justify-center">
-            <Tab className="bg-transparent w-[15%] text-center border rounded-3xl py-3 px-9">Title 1</Tab>
-            <Tab className="bg-transparent  w-[15%] text-center border rounded-3xl py-3 px-9">Title 2</Tab>
+            <Tab className="bg-transparent w-[15%] text-center border rounded-3xl py-3 px-9">Cart</Tab>
+            <Tab className="bg-transparent  w-[15%] text-center border rounded-3xl py-3 px-9">Wishlist</Tab>
           </TabList>
 
           <TabPanel>
-            <h2>Any content 1</h2>
+            <h2 className="bg-white text-green-500">Any content 1</h2>
           </TabPanel>
           <TabPanel>
             <h2>Any content 2</h2>

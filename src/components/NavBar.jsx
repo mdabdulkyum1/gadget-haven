@@ -19,7 +19,7 @@ function NavBar() {
 
   return (
     <>
-      <nav className= {`${changePath.pathname === "/" ? "absolute left-1/2 -translate-x-2/4 bg-purple text-white" : '' } navbar max-w-7xl mx-auto`}>
+      <nav className= {`${changePath.pathname === "/" ? "absolute left-1/2 -translate-x-2/4 bg-transparent text-white" : '' } navbar max-w-7xl mx-auto`}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

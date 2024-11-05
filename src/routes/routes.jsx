@@ -4,7 +4,7 @@ import Root from "../layouts/Root";
 import Home from './../pages/Home';
 import Statistics from './../pages/Statistics';
 import Dashboard from './../pages/Dashboard';
-import ProductDetails from "../components/ProductDetails";
+import ProductDetails from "../pages/ProductDetails";
 
 export const routes = createBrowserRouter([
   {

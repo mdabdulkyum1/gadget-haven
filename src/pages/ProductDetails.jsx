@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import ReusableBanner from "./ReusableBanner";
+import ReusableBanner from "../components/ReusableBanner";
 import ReactStars from "react-rating-stars-component";
 
 function ProductDetails() {
