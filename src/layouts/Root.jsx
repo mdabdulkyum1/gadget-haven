@@ -26,10 +26,17 @@ useEffect(()=> {
 } ,[data])
 
 
+const handelSort = () => {
+
+  const sorted = [...selected].sort((a,b) =>   b.price - a.price); 
+    setSelected(sorted)
+  console.log(" im  ", sorted)
+}
+
 
 
   return (
-<SelectedData.Provider value={{selected, setSelected}}>
+<SelectedData.Provider value={{selected, setSelected, handelSort}}>
     <div className="">
       {/* navbar here */}
       <NavBar />

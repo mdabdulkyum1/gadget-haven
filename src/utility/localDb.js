@@ -30,6 +30,9 @@ const handelRemoveItem = (id) => {
 
      localStorage.setItem('carts', JSON.stringify(remaining))
 
+     if(Array.isArray(id)){
+        localStorage.setItem('carts', JSON.stringify(id))
+     }
 
 }
 
