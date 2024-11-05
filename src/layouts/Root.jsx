@@ -17,9 +17,12 @@ function Root() {
   
 useEffect(()=> {
   const lsCardsId = getAddToCardList();
-
-  const current = data.filter(d => lsCardsId.includes(d.product_id))
-    setSelected(current);
+  if(data.length === 0){
+    return;
+  }else{
+    const current = data.filter(d => lsCardsId.includes(d.product_id))
+      setSelected(current);
+  }
 } ,[data])
 
 

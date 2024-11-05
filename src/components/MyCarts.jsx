@@ -9,7 +9,11 @@ function MyCarts() {
 const {selected, setSelected} = useContext(SelectedData);
 
 useEffect(() => {
-  setTotal(  selected.reduce((acc, curr) => acc + curr.price , 0)   );
+  if(selected.length === 0){
+      return;
+  }else{
+    setTotal(  selected.reduce((acc, curr) => acc + curr.price , 0)   );
+  }
 } ,[selected])
 
 
