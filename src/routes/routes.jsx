@@ -11,6 +11,7 @@ export const routes = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    loader: ()=> fetch('/products.json'),
     errorElement: <ErrorPage />,
     children: [
         {

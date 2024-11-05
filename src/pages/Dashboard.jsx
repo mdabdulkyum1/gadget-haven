@@ -1,6 +1,7 @@
 import ReusableBanner from "./../components/ReusableBanner";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import MyCarts from "../components/MyCarts";
 
 function Dashboard() {
   return (
@@ -24,8 +25,8 @@ function Dashboard() {
             <Tab className="bg-transparent  w-[15%] text-center border rounded-3xl py-3 px-9">Wishlist</Tab>
           </TabList>
 
-          <TabPanel>
-            <h2 className="bg-white text-green-500">Any content 1</h2>
+          <TabPanel className="bg-white text-black ">
+            <MyCarts></MyCarts>
           </TabPanel>
           <TabPanel>
             <h2>Any content 2</h2>

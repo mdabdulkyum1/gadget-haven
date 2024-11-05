@@ -1,6 +1,10 @@
+import ReactStars from "react-rating-stars-component";
 import { useLoaderData, useParams } from "react-router-dom";
 import ReusableBanner from "../components/ReusableBanner";
-import ReactStars from "react-rating-stars-component";
+import { setCartId } from "../utility/localDb";
+
+
+
 
 function ProductDetails() {
   const products = useLoaderData();
@@ -8,6 +12,7 @@ function ProductDetails() {
 
   const gadget = products.find((product) => product.product_id === param.id);
   const {
+    product_id,
     product_title,
     product_image,
     price,
@@ -15,6 +20,11 @@ function ProductDetails() {
     specification,
     rating,
   } = gadget;
+
+
+ const handelAddToCard = (id) => {
+      setCartId(id)
+ }
 
   return (
     <div>
@@ -78,7 +88,9 @@ function ProductDetails() {
               </div>
               <div className="my-4
                flex  gap-6 ">
-                <button className="btn bg-purple text-white font-bold rounded-3xl ">
+                <button onClick={()=> {
+                    handelAddToCard(product_id)
+                }} className="btn bg-purple text-white font-bold rounded-3xl ">
                   <div className="flex items-center gap-3">
                       <span>Add to Card</span>
                       <span> <svg
