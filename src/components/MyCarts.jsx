@@ -1,4 +1,33 @@
+import { useContext, useEffect, useState } from "react";
+import { SelectedData } from "../layouts/Root";
+import { handelRemoveItem } from "../utility/localDb";
+
 function MyCarts() {
+
+  const [total, setTotal] = useState(0);
+
+const {selected, setSelected} = useContext(SelectedData);
+
+useEffect(() => {
+  setTotal(  selected.reduce((acc, curr) => acc + curr.price , 0)   );
+} ,[selected])
+
+
+const handelClose = (id) => {
+
+  console.log(id)
+
+  handelRemoveItem(id)
+
+  const remaining = selected.filter(item=> item.product_id !== id);
+
+  setSelected(remaining)
+
+}
+
+
+
+
   return (
     <div className="">
       <div className="bg-purple h-10"></div>
@@ -6,10 +35,10 @@ function MyCarts() {
       <div className="w-10/12 mx-auto">
         <div className="flex items-center justify-between my-9">
           <div className="">
-            <h3 className="font-bold text-xl">Cart</h3>
+            <h3 className="font-bold text-xl">Cart: {selected.length}</h3>
           </div>
           <div className="flex items-center gap-10">
-            <h1 className="text-3xl font-bold">Total: cost $0</h1>
+            <h1 className="text-3xl font-bold">Total: cost ${total}</h1>
             <span className="bg-gradient-to-br from-fuchsia-500 to-rose-500 p-[1px] inline-block rounded-3xl">
               <button className="bg-white btn rounded-3xl">
                 <div className="flex items-center gap-2">
@@ -63,20 +92,22 @@ function MyCarts() {
         </div>
 
         <div className="space-y-6">
-          <div className="flex gap-6 p-6 shadow-md">
-            <div className="">
-              <img src="" alt="products" />
+
+
+        {
+          selected.map(gadget => ( <div key={gadget.product_id} className="flex gap-6 p-6 shadow-md">
+            <div className="w-1/5">
+              <img src={gadget.product_image} alt={gadget.product_title} className=""/>
             </div>
             <div className="flex-grow space-y-3">
-              <h1 className="text-2xl font-bold">Samsung Galaxy S23 Ultra</h1>
+              <h1 className="text-2xl font-bold">{gadget.product_title}</h1>
               <p>
-                Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge
-                display.
+                {gadget.description}
               </p>
-              <h3 className="font-bold">Price: $999.99</h3>
+              <h3 className="font-bold">Price: ${gadget.price}</h3>
             </div>
             <div className="">
-              <button>
+              <button onClick={()=> handelClose(gadget.product_id)}>
                 <svg
                   width="24"
                   height="24"
@@ -103,48 +134,12 @@ function MyCarts() {
                 </svg>
               </button>
             </div>
-          </div>
-          <div className="flex gap-6 p-6 shadow-md">
-            <div className="">
-              <img src="" alt="products" />
-            </div>
-            <div className="flex-grow space-y-3">
-              <h1 className="text-2xl font-bold">Samsung Galaxy S23 Ultra</h1>
-              <p>
-                Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge
-                display.
-              </p>
-              <h3 className="font-bold">Price: $999.99</h3>
-            </div>
-            <div className="">
-              <button>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line
-                    x1="4"
-                    y1="4"
-                    x2="20"
-                    y2="20"
-                    stroke="red"
-                    strokeWidth="2"
-                  />
-                  <line
-                    x1="4"
-                    y1="20"
-                    x2="20"
-                    y2="4"
-                    stroke="red"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
+          </div>))
+        }
+
+
+         
+          
         </div>
       </div>
     </div>

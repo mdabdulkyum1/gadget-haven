@@ -3,30 +3,30 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { getAddToCardList } from "../utility/localDb";
-
+import { createContext } from 'react';
 
   // Context api here
-
+export const SelectedData = createContext(null)
 
 
 function Root() {
 
-  const [c , setC] = useState([])
-
-  const data = useLoaderData();
+  const [selected, setSelected] = useState([]);
+ 
+ const data = useLoaderData();
   
 useEffect(()=> {
   const lsCardsId = getAddToCardList();
-  setC(lsCardsId)
-  const current = data.filter(d => lsCardsId.includes(d.product_id))
-  console.log(current)
-  // console.log(lsCardsId)
-} ,[])
 
-console.log(c)
+  const current = data.filter(d => lsCardsId.includes(d.product_id))
+    setSelected(current);
+} ,[data])
+
+
+
 
   return (
-
+<SelectedData.Provider value={{selected, setSelected}}>
     <div className="">
       {/* navbar here */}
       <NavBar />
@@ -35,6 +35,8 @@ console.log(c)
       {/* Footer */}
       <Footer />
     </div>
+
+</SelectedData.Provider>
 
 
   );

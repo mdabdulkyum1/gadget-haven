@@ -18,6 +18,23 @@
     },
     {
         "product_id": "P002",
+        "product_title": "Apple iPhone 15 Pro Max",
+        "product_image": "https://i.ibb.co.com/J5xMfZH/AppleLL.jpg",
+        "category": "Phones",
+        "price": 1299,
+        "description": "Experience the latest iPhone with powerful features and a high-quality camera.",
+        "specification": [
+            "6.7-inch Super Retina XDR display",
+            "A17 Bionic chip",
+            "Triple-camera system (48MP Main, 12MP Telephoto, Ultrawide)",
+            "LiDAR Scanner",
+            "Up to 2TB storage"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "P003",
         "product_title": "Dell XPS 13 Plus",
         "product_image": "https://i.ibb.co.com/yfWktYB/DellL.jpg",
         "category": "Laptops",
@@ -34,92 +51,7 @@
         "rating": 4.7
     },
     {
-        "product_id": "P003",
-        "product_title": "HP Spectre x360",
-        "product_image": "https://i.ibb.co.com/5Mm0n3N/HP-Spectre-L.webp",
-        "category": "Laptops",
-        "price": 1599,
-        "description": "A powerful 2-in-1 laptop with a stunning display and robust performance.",
-        "specification": [
-            "13.5-inch 3K2K OLED display",
-            "Intel Core i7 processor",
-            "16GB RAM",
-            "512GB SSD storage",
-            "Intel Iris Xe graphics"
-        ],
-        "availability": true,
-        "rating": 4.5
-    },
-    {
         "product_id": "P004",
-        "product_title": "Lenovo ThinkPad X1 Carbon Gen 10",
-        "product_image": "https://i.ibb.co.com/yBgRT0j/LenovoL.jpg",
-        "category": "Laptops",
-        "price": 1799,
-        "description": "Durable and powerful, this laptop is designed for business professionals.",
-        "specification": [
-            "14-inch 4K UHD display",
-            "Intel Core i7 processor",
-            "16GB RAM",
-            "1TB SSD storage",
-            "Intel Iris Xe graphics"
-        ],
-        "availability": true,
-        "rating": 4.6
-    },
-    {
-        "product_id": "P005",
-        "product_title": "Acer Swift 3",
-        "product_image": "https://i.ibb.co.com/n3wZC94/AcerL.jpg",
-        "category": "Laptops",
-        "price": 899,
-        "description": "Compact and budget-friendly, ideal for students and casual users.",
-        "specification": [
-            "14-inch Full HD display",
-            "AMD Ryzen 7 processor",
-            "8GB RAM",
-            "512GB SSD storage",
-            "AMD Radeon graphics"
-        ],
-        "availability": true,
-        "rating": 4.3
-    },
-    {
-        "product_id": "P006",
-        "product_title": "Microsoft Surface Laptop 5",
-        "product_image": "https://i.ibb.co.com/LRT4PWP/Microsoft-L.jpg",
-        "category": "Laptops",
-        "price": 1599,
-        "description": "Versatile and stylish laptop with a high-resolution touch display.",
-        "specification": [
-            "15-inch PixelSense touch display",
-            "Intel Core i5 processor",
-            "16GB RAM",
-            "256GB SSD storage",
-            "Intel Iris Xe graphics"
-        ],
-        "availability": true,
-        "rating": 4.4
-    },
-    {
-        "product_id": "P007",
-        "product_title": "Apple iPhone 15 Pro Max",
-        "product_image": "https://i.ibb.co.com/J5xMfZH/AppleLL.jpg",
-        "category": "Iphone",
-        "price": 1299,
-        "description": "Experience the latest iPhone with powerful features and a high-quality camera.",
-        "specification": [
-            "6.7-inch Super Retina XDR display",
-            "A17 Bionic chip",
-            "Triple-camera system (48MP Main, 12MP Telephoto, Ultrawide)",
-            "LiDAR Scanner",
-            "Up to 2TB storage"
-        ],
-        "availability": true,
-        "rating": 4.8
-    },
-    {
-        "product_id": "P008",
         "product_title": "Samsung Galaxy S23 Ultra",
         "product_image": "https://i.ibb.co.com/JnY13wf/SamsungL.jpg",
         "category": "Phones",
@@ -136,7 +68,24 @@
         "rating": 4.7
     },
     {
-        "product_id": "P009",
+        "product_id": "P005",
+        "product_title": "HP Spectre x360",
+        "product_image": "https://i.ibb.co.com/5Mm0n3N/HP-Spectre-L.webp",
+        "category": "Laptops",
+        "price": 1599,
+        "description": "A powerful 2-in-1 laptop with a stunning display and robust performance.",
+        "specification": [
+            "13.5-inch 3K2K OLED display",
+            "Intel Core i7 processor",
+            "16GB RAM",
+            "512GB SSD storage",
+            "Intel Iris Xe graphics"
+        ],
+        "availability": true,
+        "rating": 4.5
+    },
+    {
+        "product_id": "P006",
         "product_title": "Apple AirPods Pro (2nd generation)",
         "product_image": "https://i.ibb.co.com/3Ckgcvy/AppleL.jpg",
         "category": "Accessories",
@@ -153,7 +102,24 @@
         "rating": 4.7
     },
     {
-        "product_id": "P010",
+        "product_id": "P007",
+        "product_title": "Lenovo ThinkPad X1 Carbon Gen 10",
+        "product_image": "https://i.ibb.co.com/yBgRT0j/LenovoL.jpg",
+        "category": "Laptops",
+        "price": 1799,
+        "description": "Durable and powerful, this laptop is designed for business professionals.",
+        "specification": [
+            "14-inch 4K UHD display",
+            "Intel Core i7 processor",
+            "16GB RAM",
+            "1TB SSD storage",
+            "Intel Iris Xe graphics"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "product_id": "P008",
         "product_title": "Sony WH-1000XM5 Wireless Headphones",
         "product_image": "https://i.ibb.co.com/bBy1VCV/SonyL.jpg",
         "category": "Accessories",
@@ -168,18 +134,39 @@
         ],
         "availability": true,
         "rating": 4.6
+    },
+    {
+        "product_id": "P009",
+        "product_title": "Acer Swift 3",
+        "product_image": "https://i.ibb.co.com/n3wZC94/AcerL.jpg",
+        "category": "Laptops",
+        "price": 899,
+        "description": "Compact and budget-friendly, ideal for students and casual users.",
+        "specification": [
+            "14-inch Full HD display",
+            "AMD Ryzen 7 processor",
+            "8GB RAM",
+            "512GB SSD storage",
+            "AMD Radeon graphics"
+        ],
+        "availability": true,
+        "rating": 4.3
+    },
+    {
+        "product_id": "P010",
+        "product_title": "Microsoft Surface Laptop 5",
+        "product_image": "https://i.ibb.co.com/LRT4PWP/Microsoft-L.jpg",
+        "category": "Laptops",
+        "price": 1599,
+        "description": "Versatile and stylish laptop with a high-resolution touch display.",
+        "specification": [
+            "15-inch PixelSense touch display",
+            "Intel Core i5 processor",
+            "16GB RAM",
+            "256GB SSD storage",
+            "Intel Iris Xe graphics"
+        ],
+        "availability": true,
+        "rating": 4.4
     }
-    
 ]
-
-
-
-
-
-
-
-
-
-
-
-

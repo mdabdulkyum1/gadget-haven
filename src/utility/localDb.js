@@ -23,4 +23,15 @@ const setCartId = id => {
     }
 }
 
-export { setCartId , getAddToCardList}
+const handelRemoveItem = (id) => {
+    const existItem = getAddToCardList();
+
+    const remaining = existItem.filter(item => item !== id);
+
+     localStorage.setItem('carts', JSON.stringify(remaining))
+
+
+}
+
+
+export { setCartId , getAddToCardList, handelRemoveItem}
