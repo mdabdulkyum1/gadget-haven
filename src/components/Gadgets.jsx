@@ -34,7 +34,7 @@ const handelCategoryData = () => {
           Explore Cutting-Edge Gadgets : {gadgets.length}
         </h1>
         <div className=" lg:flex justify-center gap-6">
-          <div className="shadow-md p-6">
+          <div className="shadow-md p-6 lg:w-[15%]">
             <div className="flex flex-col gap-3">
               <button
               onClick={()=> setIsActive('all')}
@@ -63,7 +63,7 @@ const handelCategoryData = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-4 lg:ml-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-4 lg:ml-0 w-5/6">
 
                     
             {

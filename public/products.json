@@ -2,7 +2,7 @@
     {
         "product_id": "P001",
         "product_title": "Apple MacBook Pro 16-inch M2",
-        "product_image": "https://example.com/macbookpro16.jpg",
+        "product_image": "https://i.ibb.co.com/Lh33MX9/MacBookL.jpg",
         "category": "Laptops",
         "price": 2499,
         "description": "Experience the power of the Apple M2 chip in the latest MacBook Pro, perfect for professionals.",
@@ -19,7 +19,7 @@
     {
         "product_id": "P002",
         "product_title": "Dell XPS 13 Plus",
-        "product_image": "https://example.com/dellxps13.jpg",
+        "product_image": "https://i.ibb.co.com/yfWktYB/DellL.jpg",
         "category": "Laptops",
         "price": 1399,
         "description": "A high-performance laptop with a sleek design, perfect for productivity on the go.",
@@ -36,7 +36,7 @@
     {
         "product_id": "P003",
         "product_title": "HP Spectre x360",
-        "product_image": "https://example.com/hpspectrex360.jpg",
+        "product_image": "https://i.ibb.co.com/5Mm0n3N/HP-Spectre-L.webp",
         "category": "Laptops",
         "price": 1599,
         "description": "A powerful 2-in-1 laptop with a stunning display and robust performance.",
@@ -53,7 +53,7 @@
     {
         "product_id": "P004",
         "product_title": "Lenovo ThinkPad X1 Carbon Gen 10",
-        "product_image": "https://example.com/thinkpadx1carbon.jpg",
+        "product_image": "https://i.ibb.co.com/yBgRT0j/LenovoL.jpg",
         "category": "Laptops",
         "price": 1799,
         "description": "Durable and powerful, this laptop is designed for business professionals.",
@@ -70,7 +70,7 @@
     {
         "product_id": "P005",
         "product_title": "Acer Swift 3",
-        "product_image": "https://example.com/acerswift3.jpg",
+        "product_image": "https://i.ibb.co.com/n3wZC94/AcerL.jpg",
         "category": "Laptops",
         "price": 899,
         "description": "Compact and budget-friendly, ideal for students and casual users.",
@@ -87,7 +87,7 @@
     {
         "product_id": "P006",
         "product_title": "Microsoft Surface Laptop 5",
-        "product_image": "https://example.com/surfacelaptop5.jpg",
+        "product_image": "https://i.ibb.co.com/LRT4PWP/Microsoft-L.jpg",
         "category": "Laptops",
         "price": 1599,
         "description": "Versatile and stylish laptop with a high-resolution touch display.",
@@ -104,7 +104,7 @@
     {
         "product_id": "P007",
         "product_title": "Apple iPhone 15 Pro Max",
-        "product_image": "https://example.com/iphone15promax.jpg",
+        "product_image": "https://i.ibb.co.com/J5xMfZH/AppleLL.jpg",
         "category": "Iphone",
         "price": 1299,
         "description": "Experience the latest iPhone with powerful features and a high-quality camera.",
@@ -121,7 +121,7 @@
     {
         "product_id": "P008",
         "product_title": "Samsung Galaxy S23 Ultra",
-        "product_image": "https://example.com/galaxys23ultra.jpg",
+        "product_image": "https://i.ibb.co.com/JnY13wf/SamsungL.jpg",
         "category": "Phones",
         "price": 1199,
         "description": "High-end smartphone with a powerful camera and long battery life.",
@@ -138,7 +138,7 @@
     {
         "product_id": "P009",
         "product_title": "Apple AirPods Pro (2nd generation)",
-        "product_image": "https://example.com/airpodspro2.jpg",
+        "product_image": "https://i.ibb.co.com/3Ckgcvy/AppleL.jpg",
         "category": "Accessories",
         "price": 249,
         "description": "Enjoy immersive sound and active noise cancellation with the latest AirPods Pro.",
@@ -155,7 +155,7 @@
     {
         "product_id": "P010",
         "product_title": "Sony WH-1000XM5 Wireless Headphones",
-        "product_image": "https://example.com/sonywh1000xm5.jpg",
+        "product_image": "https://i.ibb.co.com/bBy1VCV/SonyL.jpg",
         "category": "Accessories",
         "price": 349,
         "description": "Industry-leading noise-cancelling headphones for immersive sound experience.",
@@ -171,3 +171,15 @@
     }
     
 ]
+
+
+
+
+
+
+
+
+
+
+
+

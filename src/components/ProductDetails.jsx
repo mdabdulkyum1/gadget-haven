@@ -12,7 +12,7 @@ function ProductDetails() {
     <div>
       <div className="">
         <ReusableBanner>
-          <div className="bg-purple text-white text-center py-14 h-60">
+          <div className="bg-purple text-white text-center py-14 pt-11 pb-28">
             <h1 className="text-3xl font-bold">Product Details</h1>
             <p className="w-1/2 mx-auto mt-4">
             Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
