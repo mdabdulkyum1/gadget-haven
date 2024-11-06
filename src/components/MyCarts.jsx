@@ -3,8 +3,8 @@ import { SelectedData } from "../layouts/Root";
 import { handelRemoveItem } from "../utility/localDb";
 import GroupPng from "../assets/Group.png";
 import Modal from "react-modal";
+import { useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 
 function MyCarts() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +15,9 @@ function MyCarts() {
   const [total, setTotal] = useState(0);
 
   const { selected, setSelected, handelSort } = useContext(SelectedData);
+
+  // useNavigate 
+ const navigate = useNavigate();
 
   useEffect(() => {
     if (selected.length === 0) {
@@ -122,14 +125,17 @@ function MyCarts() {
                   <hr className="border-gray-300 mb-2" />
                   <p className="text-gray-600 mb-1">Thanks for purchasing.</p>
                   <p className="text-gray-600 mb-4">Total: ${total}</p>
-                  <Link to="/" className="w-full">
+                
                     <button
-                      onClick={closeModal}
+                      onClick={()=>{
+                        navigate("/") 
+                        closeModal()
+                      }}
                       className="bg-gray-200 text-gray-700 py-2 px-4 rounded-full w-full"
                     >
                       Close
                     </button>
-                  </Link>
+                
                 </div>
               </Modal>
             </div>
