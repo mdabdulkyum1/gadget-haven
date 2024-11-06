@@ -2,11 +2,15 @@ import ReactStars from "react-rating-stars-component";
 import { useLoaderData, useParams } from "react-router-dom";
 import ReusableBanner from "../components/ReusableBanner";
 import { setCartId, setWishlist } from "../utility/localDb";
+import { useState } from "react";
 
 
 
 
 function ProductDetails() {
+
+  const [wishlistsBtn, setWishlistsBtn] = useState(false);
+
   const products = useLoaderData();
   const param = useParams();
 
@@ -27,6 +31,7 @@ function ProductDetails() {
  }
  const handelAddToWishlist = (id) => {
    setWishlist(id)
+   setWishlistsBtn(true)
  }
 
   return (
@@ -115,13 +120,13 @@ function ProductDetails() {
 
                 <button onClick={()=> {
                   handelAddToWishlist(product_id)
-                } }
+                } } disabled={wishlistsBtn}
                  className="btn rounded-full border border-gray-500">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
                     viewBox="0 0 24 24"
-                    fill="none"
+                    fill={wishlistsBtn === true ? 'purple' : 'white'}
                     stroke="black"
                     strokeWidth="2"
                     strokeLinecap="round"
