@@ -1,6 +1,6 @@
 
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { SelectedData } from "../layouts/Root";
+import { SelectedData, WishListContext } from "../layouts/Root";
 import { useContext } from "react";
 
 
@@ -9,6 +9,7 @@ import { useContext } from "react";
 function NavBar() {
 
   const {selected} = useContext(SelectedData);
+  const {wishlists} = useContext(WishListContext);
 
 
 
@@ -130,7 +131,10 @@ function NavBar() {
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
 
-                  {/* <span className="badge badge-sm indicator-item"></span> */}
+                    {
+                      wishlists.length === 0 ? "" : <span className="badge badge-sm indicator-item">{wishlists.length}</span>
+                    }
+                  
                 </div>
               </div>
               <div
@@ -138,7 +142,7 @@ function NavBar() {
                 className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
               >
                 <div className="card-body">
-                  <span className="text-lg font-bold">8 Items</span>
+                  <span className="text-lg font-bold">{wishlists.length} Items</span>
                   <span className="text-info">Subtotal: $999</span>
                   <div className="card-actions">
                     <Link to="/dashboard" className="btn btn-primary btn-block">

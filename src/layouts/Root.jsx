@@ -2,16 +2,18 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
-import { getAddToCardList } from "../utility/localDb";
+import { getAddToCardList, getAddToWishlist } from "../utility/localDb";
 import { createContext } from 'react';
 
   // Context api here
 export const SelectedData = createContext(null)
 
+export const WishListContext = createContext({})
 
 function Root() {
 
   const [selected, setSelected] = useState([]);
+  const [wishlists, setWishlists] = useState([]);
  
  const data = useLoaderData();
   
@@ -26,6 +28,25 @@ useEffect(()=> {
 } ,[data])
 
 
+
+// setWishlist
+
+useEffect(()=> {
+  const wishlist = getAddToWishlist();
+  if(data.length === 0){
+    return;
+  }else{
+    const current = data.filter(d => wishlist.includes(d.product_id))
+    setWishlists(current);
+  }
+} ,[data])
+
+
+
+
+
+
+
 const handelSort = () => {
 
   const sorted = [...selected].sort((a,b) =>   b.price - a.price); 
@@ -36,6 +57,9 @@ const handelSort = () => {
 
 
   return (
+
+    <WishListContext.Provider value={{wishlists, setWishlists}}>
+
 <SelectedData.Provider value={{selected, setSelected, handelSort}}>
     <div className="">
       {/* navbar here */}
@@ -47,6 +71,9 @@ const handelSort = () => {
     </div>
 
 </SelectedData.Provider>
+
+    </WishListContext.Provider>
+
 
 
   );

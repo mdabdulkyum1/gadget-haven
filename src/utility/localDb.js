@@ -37,4 +37,47 @@ const handelRemoveItem = (id) => {
 }
 
 
-export { setCartId , getAddToCardList, handelRemoveItem}
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            Wishlist
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/ 
+
+const getAddToWishlist = () => {
+    const wishlistItem = localStorage.getItem('wishlist');
+
+    if(wishlistItem){
+        return JSON.parse(wishlistItem);
+    }
+    else{
+        return [];
+    }
+}
+
+const setWishlist= id => {
+    const wishlistItems = getAddToWishlist();
+
+    if(wishlistItems.includes(id)){
+        console.log("already exists");
+    }
+    else{
+        wishlistItems.push(id);
+        localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+    }
+}
+
+const handelRemoveWishlistItem = (id) => {
+    const existItem = getAddToCardList();
+
+    const remaining = existItem.filter(item => item !== id);
+
+     localStorage.setItem('wishlist', JSON.stringify(remaining))
+
+    //  if(Array.isArray(id)){
+    //     localStorage.setItem('wishlist', JSON.stringify(id))
+    //  }
+
+}
+
+
+export { setCartId , getAddToCardList, handelRemoveItem, getAddToWishlist, setWishlist, handelRemoveWishlistItem}
