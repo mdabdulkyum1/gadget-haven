@@ -22,8 +22,7 @@ function ContactUs() {
             <input
               type="text"
               name="name"
-              value=""
-              required
+              placeholder="Name"
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
             />
           </div>
@@ -34,8 +33,8 @@ function ContactUs() {
             <input
               type="email"
               name="email"
-              value=""
-              required
+              placeholder="Email"
+              
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
             />
           </div>
@@ -45,8 +44,7 @@ function ContactUs() {
             </label>
             <textarea
               name="message"
-              value=""
-              required
+              placeholder="Message"
               rows="4"
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
             />
