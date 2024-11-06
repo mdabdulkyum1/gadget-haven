@@ -1,10 +1,10 @@
 # Gadget Heaven
 
 ## Live Website
-Visit the Live Website <!-- Replace `#` with the actual link to your live site -->
+Visit the Live Website 
 
 ## Requirement Document
-Requirement Document Link <!-- Replace `#` with the actual link to the requirement document -->
+[Requirement Link](https://drive.google.com/file/d/1gb-2BRWmqXfEZlO-E-kmtS_I4LC2LOrT/view?usp=sharing)
 
 
 

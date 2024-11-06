@@ -48,11 +48,7 @@ useEffect(()=> {
 
 
 
-const handelSort = () => {
 
-  const sorted = [...selected].sort((a,b) =>   b.price - a.price); 
-    setSelected(sorted)
-}
 
 
 
@@ -60,7 +56,7 @@ const handelSort = () => {
 
     <WishListContext.Provider value={{wishlists, setWishlists}}>
 
-<SelectedData.Provider value={{selected, setSelected, handelSort}}>
+<SelectedData.Provider value={{selected, setSelected}}>
     <div className="">
       {/* navbar here */}
       <NavBar />

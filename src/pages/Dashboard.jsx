@@ -4,10 +4,33 @@ import "react-tabs/style/react-tabs.css";
 import MyCarts from "../components/MyCarts";
 import Wishlists from "../components/Wishlists";
 import { Helmet } from "react-helmet-async";
+import {  createContext, useEffect, useState } from "react";
+import { getAddToCardList } from "../utility/localDb";
+import { useLoaderData } from "react-router-dom";
+
+export const CartContext = createContext({})
 
 function Dashboard() {
 
+  const [selected, setSelected] = useState([]);
+console.log(selected)
+  const data = useLoaderData();
 
+  useEffect(()=> {
+    const lsCardsId = getAddToCardList();
+    if(data.length === 0){
+      return;
+    }else{
+      const current = data.filter(d => lsCardsId.includes(d.product_id))
+        setSelected(current);
+    }
+  },[data])
+
+  const handelSort = () => {
+
+    const sorted = [...selected].sort((a,b) =>   b.price - a.price); 
+      setSelected(sorted)
+  }
 
   return (
     <>
@@ -27,6 +50,8 @@ function Dashboard() {
           </div>
         </ReusableBanner>
       </div>
+      <CartContext.Provider value={{selected, setSelected, handelSort}}>
+
       <div className="">
         <Tabs>
           <TabList className="flex justify-center">
@@ -42,6 +67,7 @@ function Dashboard() {
           </TabPanel>
         </Tabs>
       </div>
+      </CartContext.Provider>
     </div>
     </>
   );

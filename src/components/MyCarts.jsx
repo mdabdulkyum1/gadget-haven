@@ -1,12 +1,13 @@
-import { useContext, useEffect, useState } from "react";
-import { SelectedData } from "../layouts/Root";
+import {  useContext, useEffect, useState } from "react";
 import { handelRemoveItem } from "../utility/localDb";
 import GroupPng from "../assets/Group.png";
 import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../pages/Dashboard";
 
 
 function MyCarts() {
+const {selected, setSelected, handelSort} = useContext(CartContext)
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
@@ -14,17 +15,15 @@ function MyCarts() {
 
   const [total, setTotal] = useState(0);
 
-  const { selected, setSelected, handelSort } = useContext(SelectedData);
+  
 
   // useNavigate 
  const navigate = useNavigate();
 
   useEffect(() => {
-    if (selected.length === 0) {
-      return;
-    } else {
+    
       setTotal(selected.reduce((acc, curr) => acc + curr.price, 0));
-    }
+  
   }, [selected]);
 
   const handelClose = (id) => {
