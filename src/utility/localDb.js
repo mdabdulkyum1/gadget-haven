@@ -42,7 +42,10 @@ const addCartNotify = () => {
 }
 
 const handelRemoveItem = (id) => {
-    removeCartNotify();
+    if(typeof id === 'string'){
+
+        removeCartNotify();
+    }
     const existItem = getAddToCardList();
 
     const remaining = existItem.filter(item => item !== id);

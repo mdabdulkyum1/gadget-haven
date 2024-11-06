@@ -1,37 +1,39 @@
 import { useContext, useEffect, useState } from "react";
 import { SelectedData } from "../layouts/Root";
 import { handelRemoveItem } from "../utility/localDb";
-import GroupPng from '../assets/Group.png'
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import GroupPng from "../assets/Group.png";
+import Modal from "react-modal";
+
 import { Link } from "react-router-dom";
 
 function MyCarts() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
   const [total, setTotal] = useState(0);
 
-const {selected, setSelected, handelSort} = useContext(SelectedData);
+  const { selected, setSelected, handelSort } = useContext(SelectedData);
 
-useEffect(() => {
-  if(selected.length === 0){
+  useEffect(() => {
+    if (selected.length === 0) {
       return;
-  }else{
-    setTotal(  selected.reduce((acc, curr) => acc + curr.price , 0)   );
-  }
-} ,[selected])
+    } else {
+      setTotal(selected.reduce((acc, curr) => acc + curr.price, 0));
+    }
+  }, [selected]);
 
+  const handelClose = (id) => {
+    handelRemoveItem(id);
+    const remaining = selected.filter((item) => item.product_id !== id);
+    setSelected(remaining);
+  };
 
-const handelClose = (id) => {
-  handelRemoveItem(id)
-  const remaining = selected.filter(item=> item.product_id !== id);
-  setSelected(remaining)
-}
-
-const handelEmpty = () => {
-   setSelected([]);
-   handelRemoveItem([]);
-}
-
+  const handelEmpty = () => {
+    setSelected([]);
+    handelRemoveItem([]);
+  };
 
   return (
     <div className="">
@@ -90,95 +92,95 @@ const handelEmpty = () => {
                 </div>
               </button>
             </span>
-  
 
-      {/* Purchase Button with Popup Trigger */}
-      <Popup className="bg-transparent"
-  trigger={
-    <button className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white inline-block rounded-3xl btn">
-      Purchase
-    </button>
-  }
-  position="center center"
-  modal
->
-  {() => (
-     <div className="p-6 text-center h-[268px] w-[368px] mx-auto">
-    <div className="flex justify-center mb-4">
-      <div className="">
-          <img src={GroupPng} alt="" />
-      </div>
-    </div>
-    <h1 className="text-xl font-semibold mb-2">Payment Successfully</h1>
-    <hr className="border-gray-300 mb-2" />
-    <p className="text-gray-600 mb-1">Thanks for purchasing.</p>
-    <p className="text-gray-600 mb-4">Total: ${total}</p>
-    <Link to="/" className="bg-gray-200 text-gray-700 py-2 px-4 rounded-full w-full">
-      <button onClick={()=> handelEmpty()}>Close</button>
-    </Link>
-     </div>
-  )}
-</Popup>
+            {/* Purchase Button with Popup */}
+            <div>
+              <button
+                onClick={() => {
+                  openModal();
+                  handelEmpty();
+                }}
+                className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white inline-block rounded-3xl btn"
+              >
+                Purchase
+              </button>
 
-
-
-
-
-
-
-            
+              <Modal
+                isOpen={isOpen}
+                onRequestClose={closeModal}
+                contentLabel="Payment Success"
+                className="bg-white p-8 rounded-md shadow-lg w-11/12 max-w-md mx-auto mt-10"
+                overlayClassName="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center"
+              >
+                <div className="p-6 text-center h-[268px] w-[368px] mx-auto">
+                  <div className="flex justify-center mb-4">
+                    <img src={GroupPng} alt="Success" />
+                  </div>
+                  <h1 className="text-xl font-semibold mb-2">
+                    Payment Successfully
+                  </h1>
+                  <hr className="border-gray-300 mb-2" />
+                  <p className="text-gray-600 mb-1">Thanks for purchasing.</p>
+                  <p className="text-gray-600 mb-4">Total: ${total}</p>
+                  <Link to="/" className="w-full">
+                    <button
+                      onClick={closeModal}
+                      className="bg-gray-200 text-gray-700 py-2 px-4 rounded-full w-full"
+                    >
+                      Close
+                    </button>
+                  </Link>
+                </div>
+              </Modal>
+            </div>
           </div>
         </div>
 
         <div className="space-y-6">
-
-
-        {
-          selected.map(gadget => ( <div key={gadget.product_id} className="flex gap-6 p-6 shadow-md">
-            <div className="w-1/5">
-              <img src={gadget.product_image} alt={gadget.product_title} className=""/>
+          {selected.map((gadget) => (
+            <div key={gadget.product_id} className="flex gap-6 p-6 shadow-md">
+              <div className="w-1/5">
+                <img
+                  src={gadget.product_image}
+                  alt={gadget.product_title}
+                  className=""
+                />
+              </div>
+              <div className="flex-grow space-y-3">
+                <h1 className="text-2xl font-bold">{gadget.product_title}</h1>
+                <p>{gadget.description}</p>
+                <h3 className="font-bold">Price: ${gadget.price}</h3>
+              </div>
+              <div className="">
+                <button onClick={() => handelClose(gadget.product_id)}>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="4"
+                      y1="4"
+                      x2="20"
+                      y2="20"
+                      stroke="red"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="4"
+                      y1="20"
+                      x2="20"
+                      y2="4"
+                      stroke="red"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div className="flex-grow space-y-3">
-              <h1 className="text-2xl font-bold">{gadget.product_title}</h1>
-              <p>
-                {gadget.description}
-              </p>
-              <h3 className="font-bold">Price: ${gadget.price}</h3>
-            </div>
-            <div className="">
-              <button onClick={()=> handelClose(gadget.product_id)}>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line
-                    x1="4"
-                    y1="4"
-                    x2="20"
-                    y2="20"
-                    stroke="red"
-                    strokeWidth="2"
-                  />
-                  <line
-                    x1="4"
-                    y1="20"
-                    x2="20"
-                    y2="4"
-                    stroke="red"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>))
-        }
-
-
-         
-          
+          ))}
         </div>
       </div>
     </div>
