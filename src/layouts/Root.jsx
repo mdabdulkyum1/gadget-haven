@@ -7,7 +7,7 @@ import { createContext } from 'react';
 import { ToastContainer } from "react-toastify";
 
   // Context api here
-export const SelectedData = createContext(null)
+export const SelectedData = createContext({})
 
 export const WishListContext = createContext({})
 

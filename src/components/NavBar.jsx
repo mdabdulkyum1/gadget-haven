@@ -25,6 +25,9 @@ function NavBar() {
       <NavLink to="/dashboard" className="py-2 px-4">
         Dashboard
       </NavLink>
+      <NavLink to="/contact" className="py-2 px-4">
+      Contact Us
+      </NavLink>
     </>
   );
 
