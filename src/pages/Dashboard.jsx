@@ -3,9 +3,14 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import MyCarts from "../components/MyCarts";
 import Wishlists from "../components/Wishlists";
+import { Helmet } from "react-helmet-async";
 
 function Dashboard() {
   return (
+    <>
+    <Helmet>
+      <title>Dashboard | Gadget Heaven</title>
+    </Helmet>
     <div className="bg-purple text-white">
       <div className="">
         <ReusableBanner>
@@ -35,6 +40,7 @@ function Dashboard() {
         </Tabs>
       </div>
     </div>
+    </>
   );
 }
 

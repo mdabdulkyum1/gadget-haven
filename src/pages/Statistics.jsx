@@ -1,7 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import ReusableBanner from "./../components/ReusableBanner";
 
 function Statistics() {
   return (
+    <>
+    <Helmet>
+        <title>Statistics | Gadget Heaven</title>
+    </Helmet>
     <div className="">
       <div className="">
         <ReusableBanner>
@@ -19,6 +24,7 @@ function Statistics() {
             <h1 className="text-purple font-bold text-4xl text-center">No Data to Show Statistics</h1>
         </div>
     </div>
+    </>
   );
 }
 
