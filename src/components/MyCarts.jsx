@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { SelectedData } from "../layouts/Root";
 import { handelRemoveItem } from "../utility/localDb";
-
+import GroupPng from '../assets/Group.png'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { Link } from "react-router-dom";
@@ -90,13 +90,8 @@ const handelEmpty = () => {
                 </div>
               </button>
             </span>
-            {/* <Popup trigger={<button className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white  inline-block rounded-3xl btn">
-              Purchase
-            </button>} position="center center">
-    <div>Popup content here !!</div>
-  </Popup> */}
+  
 
-<div>
       {/* Purchase Button with Popup Trigger */}
       <Popup className="bg-transparent"
   trigger={
@@ -108,25 +103,24 @@ const handelEmpty = () => {
   modal
 >
   {() => (
-    <div className="p-6 text-center h-[268px] w-[368px]">
+     <div className="p-6 text-center h-[268px] w-[368px] mx-auto">
     <div className="flex justify-center mb-4">
-      <div className="bg-green-500 rounded-full p-3">
-        <i className="fas fa-check text-white text-2xl"></i>
+      <div className="">
+          <img src={GroupPng} alt="" />
       </div>
     </div>
-    <h1 className="text-xl font-semibold mb-2">Payment Successful</h1>
+    <h1 className="text-xl font-semibold mb-2">Payment Successfully</h1>
     <hr className="border-gray-300 mb-2" />
     <p className="text-gray-600 mb-1">Thanks for purchasing.</p>
     <p className="text-gray-600 mb-4">Total: ${total}</p>
     <Link to="/" className="bg-gray-200 text-gray-700 py-2 px-4 rounded-full w-full">
       <button onClick={()=> handelEmpty()}>Close</button>
     </Link>
-  </div>
-  
+     </div>
   )}
 </Popup>
 
-    </div>
+
 
 
 
