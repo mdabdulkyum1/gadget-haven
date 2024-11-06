@@ -1,3 +1,6 @@
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 const getAddToCardList = () => {
     const cardsItem = localStorage.getItem('carts');
 
@@ -18,12 +21,28 @@ const setCartId = id => {
         console.log("already exists");
     }
     else{
+        addCartNotify()
         cartItems.push(id);
         localStorage.setItem('carts', JSON.stringify(cartItems));
     }
 }
 
+// tost
+const addCartNotify = () => {
+    toast.success('Added to card', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+}
+
 const handelRemoveItem = (id) => {
+    removeCartNotify();
     const existItem = getAddToCardList();
 
     const remaining = existItem.filter(item => item !== id);
@@ -33,8 +52,21 @@ const handelRemoveItem = (id) => {
      if(Array.isArray(id)){
         localStorage.setItem('carts', JSON.stringify(id))
      }
-
 }
+const removeCartNotify = () => {
+    toast.info('Remove to card', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+}
+
+//  remove notify
 
 
 /*
@@ -61,12 +93,25 @@ const setWishlist= id => {
         console.log("already exists");
     }
     else{
+        addWishNotify()
         wishlistItems.push(id);
         localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
     }
 }
-
+const addWishNotify = () => {
+    toast.success('Added to your Wishlists', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+}
 const handelRemoveWishlistItem = (id) => {
+    removeWishNotify();
     const existItem = getAddToCardList();
 
     const remaining = existItem.filter(item => item !== id);
@@ -78,6 +123,17 @@ const handelRemoveWishlistItem = (id) => {
     //  }
 
 }
-
+const removeWishNotify = () => {
+    toast.info('Remove from your Wishlists', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+}
 
 export { setCartId , getAddToCardList, handelRemoveItem, getAddToWishlist, setWishlist, handelRemoveWishlistItem}

@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { getAddToCardList, getAddToWishlist } from "../utility/localDb";
 import { createContext } from 'react';
+import { ToastContainer } from "react-toastify";
 
   // Context api here
 export const SelectedData = createContext(null)
@@ -69,7 +70,7 @@ const handelSort = () => {
       {/* Footer */}
       <Footer />
     </div>
-
+  <ToastContainer></ToastContainer>
 </SelectedData.Provider>
 
     </WishListContext.Provider>
