@@ -1,14 +1,5 @@
 {
-    "version": 2,
     "rewrites": [
       { "source": "/(.*)", "destination": "/" }
-    ],
-    "redirects": [
-      { "source": "/index", "destination": "/", "permanent": true },
-      { "source": "/home", "destination": "/", "permanent": true }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
     ]
   }
-  
