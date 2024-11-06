@@ -48,8 +48,8 @@ function ProductDetails() {
           </div>
         </ReusableBanner>
         <div className="w-2/3 mx-auto p-6 -translate-y-[150px] bg-white rounded-lg">
-          <div className="flex gap-7">
-            <div className="w-10/12">
+          <div className="flex flex-col lg:flex-row gap-7">
+            <div className="w-full lg:w-10/12">
               <img
                 src={product_image}
                 alt={product_title}

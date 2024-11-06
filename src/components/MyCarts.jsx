@@ -44,11 +44,11 @@ function MyCarts() {
       <div className="bg-purple h-10"></div>
 
       <div className="w-10/12 mx-auto">
-        <div className="flex items-center justify-between my-9">
+        <div className="flex flex-col lg:flex-row items-center justify-between my-9">
           <div className="">
             <h3 className="font-bold text-xl">Cart: {selected.length}</h3>
           </div>
-          <div className="flex items-center gap-10">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
             <h1 className="text-3xl font-bold">Total: cost ${total}</h1>
             <span className="bg-gradient-to-br from-fuchsia-500 to-rose-500 p-[1px] inline-block rounded-3xl">
               <button onClick={handelSort} className="bg-white btn rounded-3xl">

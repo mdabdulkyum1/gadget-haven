@@ -1,19 +1,26 @@
 import { useContext } from "react"
 import { WishListContext } from "../layouts/Root"
 import { handelRemoveWishlistItem, setCartId } from "../utility/localDb"
+import { WishContext } from "../pages/Dashboard"
 
 
 function Wishlists() {
 
+  const { wish, setWish } = useContext(WishContext)
+
   const {wishlists, setWishlists} = useContext(WishListContext)
-
-
   const handelClose = (id) => {
     handelRemoveWishlistItem(id)
     const remaining = wishlists.filter(item=> item.product_id !== id);
     setWishlists(remaining)
+    
+    if(wish){
+      
+      const remaining = wish.filter(item=> item.product_id !== id);
+      handelRemoveWishlistItem(id)
+      setWish(remaining);
+    }
   }
-
   const handelAddToCart = id => {
     setCartId(id)
   }
@@ -33,7 +40,7 @@ function Wishlists() {
       
 
 {
-  wishlists.map(item=> (<div key={item.product_id} className="flex gap-6 p-6 shadow-md">
+  wish.map(item=> (<div key={item.product_id} className="flex gap-6 p-6 shadow-md">
     <div className="w-1/5">
       <img src={item.product_image} alt="products" />
     </div>

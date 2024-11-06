@@ -5,19 +5,20 @@ import MyCarts from "../components/MyCarts";
 import Wishlists from "../components/Wishlists";
 import { Helmet } from "react-helmet-async";
 import {  createContext, useEffect, useState } from "react";
-import { getAddToCardList } from "../utility/localDb";
+import { getAddToCardList, getAddToWishlist } from "../utility/localDb";
 import { useLoaderData } from "react-router-dom";
 
-export const CartContext = createContext({})
+export const CartContext = createContext({});
+export const WishContext = createContext({});
 
 function Dashboard() {
 
+
+
+  const [wish, setWish] = useState([]);
   const [selected, setSelected] = useState([]);
-
   const data = useLoaderData();
-
   useEffect(()=> {
-
     if(selected){
       const lsCardsId = getAddToCardList();
     if(data.length === 0){
@@ -29,8 +30,20 @@ function Dashboard() {
     }else{
       return;
     }
+  },[data])
 
-    
+  useEffect(()=> {
+    if(selected){
+      const wishCardsId = getAddToWishlist();
+    if(data.length === 0){
+      return;
+    }else{
+      const current = data.filter(d => wishCardsId.includes(d.product_id))
+        setWish(current);
+    }
+    }else{
+      return;
+    }
   },[data])
 
   const handelSort = () => {
@@ -57,13 +70,15 @@ function Dashboard() {
           </div>
         </ReusableBanner>
       </div>
+<WishContext.Provider value={{wish, setWish}}>
+
       <CartContext.Provider value={{selected, setSelected, handelSort}}>
 
       <div className="">
         <Tabs>
-          <TabList className="flex justify-center">
-            <Tab className="bg-transparent w-[15%] text-center border rounded-3xl py-3 px-9">Cart</Tab>
-            <Tab className="bg-transparent  w-[15%] text-center border rounded-3xl py-3 px-9">Wishlist</Tab>
+          <TabList className="flex flex-col lg:flex-row justify-center">
+            <Tab className="bg-transparent lg:w-[15%] text-center border rounded-3xl py-3 px-9">Cart</Tab>
+            <Tab className="bg-transparent  lg:w-[15%] text-center border rounded-3xl py-3 px-9">Wishlist</Tab>
           </TabList>
 
           <TabPanel className="bg-white text-black">
@@ -75,6 +90,9 @@ function Dashboard() {
         </Tabs>
       </div>
       </CartContext.Provider>
+
+</WishContext.Provider>
+    
     </div>
     </>
   );
