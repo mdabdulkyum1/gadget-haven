@@ -13,17 +13,24 @@ export const CartContext = createContext({})
 function Dashboard() {
 
   const [selected, setSelected] = useState([]);
-console.log(selected)
+
   const data = useLoaderData();
 
   useEffect(()=> {
-    const lsCardsId = getAddToCardList();
+
+    if(selected){
+      const lsCardsId = getAddToCardList();
     if(data.length === 0){
       return;
     }else{
       const current = data.filter(d => lsCardsId.includes(d.product_id))
         setSelected(current);
     }
+    }else{
+      return;
+    }
+
+    
   },[data])
 
   const handelSort = () => {

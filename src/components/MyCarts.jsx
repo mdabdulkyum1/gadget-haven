@@ -1,40 +1,42 @@
-import {  useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { handelRemoveItem } from "../utility/localDb";
 import GroupPng from "../assets/Group.png";
 import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../pages/Dashboard";
 
-
 function MyCarts() {
-const {selected, setSelected, handelSort} = useContext(CartContext)
-  const [isOpen, setIsOpen] = useState(false);
+  const { selected, setSelected, handelSort } = useContext(CartContext);
 
+  const [total, setTotal] = useState(0);
+  const [purchaseTotal, setPurchaseTotal] = useState(0); 
+  const [isOpen, setIsOpen] = useState(false);
+  
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
-  const [total, setTotal] = useState(0);
-
-  
-
-  // useNavigate 
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    
-      setTotal(selected.reduce((acc, curr) => acc + curr.price, 0));
-  
+    const totalPrice = [...selected].reduce((acc, curr) => acc + curr.price, 0);
+    setTotal(totalPrice);
   }, [selected]);
 
   const handelClose = (id) => {
     handelRemoveItem(id);
-    const remaining = selected.filter((item) => item.product_id !== id);
+    const remaining = [...selected].filter((item) => item.product_id !== id);
     setSelected(remaining);
   };
 
   const handelEmpty = () => {
     setSelected([]);
     handelRemoveItem([]);
+  };
+
+  const handlePurchase = () => {
+    setPurchaseTotal(total); 
+    openModal();
+    handelEmpty();
   };
 
   return (
@@ -69,7 +71,6 @@ const {selected, setSelected, handelSort} = useContext(CartContext)
                         strokeWidth="2"
                       />
                       <circle cx="6" cy="8" r="2" fill="#7D3CC0" />
-
                       <line
                         x1="12"
                         y1="4"
@@ -79,7 +80,6 @@ const {selected, setSelected, handelSort} = useContext(CartContext)
                         strokeWidth="2"
                       />
                       <circle cx="12" cy="16" r="2" fill="#7D3CC0" />
-
                       <line
                         x1="18"
                         y1="4"
@@ -98,10 +98,7 @@ const {selected, setSelected, handelSort} = useContext(CartContext)
             {/* Purchase Button with Popup */}
             <div>
               <button
-                onClick={() => {
-                  openModal();
-                  handelEmpty();
-                }}
+                onClick={handlePurchase} 
                 className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white inline-block rounded-3xl btn"
               >
                 Purchase
@@ -123,18 +120,17 @@ const {selected, setSelected, handelSort} = useContext(CartContext)
                   </h1>
                   <hr className="border-gray-300 mb-2" />
                   <p className="text-gray-600 mb-1">Thanks for purchasing.</p>
-                  <p className="text-gray-600 mb-4">Total: ${total}</p>
+                  <p className="text-gray-600 mb-4">Total: ${purchaseTotal}</p> 
                 
-                    <button
-                      onClick={()=>{
-                        navigate("/") 
-                        closeModal()
-                      }}
-                      className="bg-gray-200 text-gray-700 py-2 px-4 rounded-full w-full"
-                    >
-                      Close
-                    </button>
-                
+                  <button
+                    onClick={() => {
+                      navigate("/");
+                      closeModal();
+                    }}
+                    className="bg-gray-200 text-gray-700 py-2 px-4 rounded-full w-full"
+                  >
+                    Close
+                  </button>
                 </div>
               </Modal>
             </div>
