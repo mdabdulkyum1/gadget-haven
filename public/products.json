@@ -4,7 +4,7 @@
         "product_title": "Apple MacBook Pro 16-inch M2",
         "product_image": "https://i.ibb.co.com/Lh33MX9/MacBookL.jpg",
         "category": "Laptops",
-        "price": 2499,
+        "price": 199,
         "description": "Experience the power of the Apple M2 chip in the latest MacBook Pro, perfect for professionals.",
         "specification": [
             "16-inch Liquid Retina XDR display",
@@ -21,7 +21,7 @@
         "product_title": "Apple iPhone 15 Pro Max",
         "product_image": "https://i.ibb.co.com/J5xMfZH/AppleLL.jpg",
         "category": "Phones",
-        "price": 1299,
+        "price": 189,
         "description": "Experience the latest iPhone with powerful features and a high-quality camera.",
         "specification": [
             "6.7-inch Super Retina XDR display",
@@ -38,7 +38,7 @@
         "product_title": "Dell XPS 13 Plus",
         "product_image": "https://i.ibb.co.com/yfWktYB/DellL.jpg",
         "category": "Laptops",
-        "price": 1399,
+        "price": 175,
         "description": "A high-performance laptop with a sleek design, perfect for productivity on the go.",
         "specification": [
             "13.4-inch InfinityEdge display",
@@ -55,7 +55,7 @@
         "product_title": "Samsung Galaxy S23 Ultra",
         "product_image": "https://i.ibb.co.com/JnY13wf/SamsungL.jpg",
         "category": "Phones",
-        "price": 1199,
+        "price": 160,
         "description": "High-end smartphone with a powerful camera and long battery life.",
         "specification": [
             "6.8-inch QHD+ AMOLED display",
@@ -72,7 +72,7 @@
         "product_title": "HP Spectre x360",
         "product_image": "https://i.ibb.co.com/5Mm0n3N/HP-Spectre-L.webp",
         "category": "Laptops",
-        "price": 1599,
+        "price": 155,
         "description": "A powerful 2-in-1 laptop with a stunning display and robust performance.",
         "specification": [
             "13.5-inch 3K2K OLED display",
@@ -89,7 +89,7 @@
         "product_title": "Apple AirPods Pro (2nd generation)",
         "product_image": "https://i.ibb.co.com/3Ckgcvy/AppleL.jpg",
         "category": "Accessories",
-        "price": 249,
+        "price": 135,
         "description": "Enjoy immersive sound and active noise cancellation with the latest AirPods Pro.",
         "specification": [
             "Active noise cancellation",
@@ -106,7 +106,7 @@
         "product_title": "Lenovo ThinkPad X1 Carbon Gen 10",
         "product_image": "https://i.ibb.co.com/yBgRT0j/LenovoL.jpg",
         "category": "Laptops",
-        "price": 1799,
+        "price": 120,
         "description": "Durable and powerful, this laptop is designed for business professionals.",
         "specification": [
             "14-inch 4K UHD display",
@@ -123,7 +123,7 @@
         "product_title": "Sony WH-1000XM5 Wireless Headphones",
         "product_image": "https://i.ibb.co.com/bBy1VCV/SonyL.jpg",
         "category": "Accessories",
-        "price": 349,
+        "price": 115,
         "description": "Industry-leading noise-cancelling headphones for immersive sound experience.",
         "specification": [
             "Active noise cancellation",
@@ -140,7 +140,7 @@
         "product_title": "Acer Swift 3",
         "product_image": "https://i.ibb.co.com/n3wZC94/AcerL.jpg",
         "category": "Laptops",
-        "price": 899,
+        "price": 95,
         "description": "Compact and budget-friendly, ideal for students and casual users.",
         "specification": [
             "14-inch Full HD display",
@@ -157,7 +157,7 @@
         "product_title": "Microsoft Surface Laptop 5",
         "product_image": "https://i.ibb.co.com/LRT4PWP/Microsoft-L.jpg",
         "category": "Laptops",
-        "price": 1599,
+        "price": 185,
         "description": "Versatile and stylish laptop with a high-resolution touch display.",
         "specification": [
             "15-inch PixelSense touch display",
