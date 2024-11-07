@@ -42,7 +42,7 @@ function Gadgets() {
 
   return (
     <>
-      <div className="-mt-24 mb-12">
+      <div id="gadget" className="-mt-24 mb-12">
         <h1 className="text-center text-4xl font-bold mb-6">
           Explore Cutting-Edge Gadgets : {gadgets.length}
         </h1>

@@ -10,7 +10,7 @@ function Banner() {
           <p className="py-6">
           Explore the latest gadgets that will take your experience to the next level. From smart devices <br /> to the coolest accessories, we have it all!
           </p>
-          <button className="btn bg-white text-purple rounded-3xl px-8">Shop Now</button>
+          <a href='#gadget' className="btn bg-white text-purple rounded-3xl px-8">Shop Now</a>
         </div>
       </div>
       <div className="-translate-y-[160px] sm:-translate-y-[200px] md:-translate-y-[200px] lg:-translate-y-[170px] xl:-translate-y-[210px] lg:w-2/3  mx-auto rounded-2xl border border-white bg-[#ffffff75] p-6">
